@@ -7,4 +7,10 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    %header.shadow.fixed-top.bg-light
+      %h2.logo.ml-5.float-left.my-3 cloval
+      .btn-wrapper.mr-5.my-3.float-right
+        .btn.btn-outline-primary sign in
+        .btn.btn-outline-primary.ml-2 sign up
+
     = yield
