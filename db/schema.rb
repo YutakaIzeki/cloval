@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190413055029) do
+ActiveRecord::Schema.define(version: 20190413104456) do
+
+  create_table "coordinates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.text     "image",             limit: 65535,             null: false
+    t.integer  "good",                            default: 0
+    t.integer  "evaluation_value",                default: 0
+    t.integer  "evaluation_number",               default: 0
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+    t.index ["user_id"], name: "index_coordinates_on_user_id", using: :btree
+  end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
