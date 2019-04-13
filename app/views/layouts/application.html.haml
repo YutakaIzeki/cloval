@@ -8,9 +8,10 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     %header.shadow.fixed-top.bg-light
-      %h2.logo.ml-5.float-left.my-3 cloval
+      %h2.logo.ml-5.float-left.my-3
+        = link_to 'cloval', root_path, class: 'logo text-body'
       .btn-wrapper.mr-5.my-3.float-right
-        .btn.btn-outline-primary sign in
-        .btn.btn-outline-primary.ml-2 sign up
+        = link_to "sign in", new_user_session_path, class: 'btn btn-outline-primary'
+        = link_to "sign up", new_user_registration_path, class: 'btn btn-outline-primary ml-2'
 
     = yield

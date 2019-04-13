@@ -1,4 +1,7 @@
 
 .logo{
   letter-spacing: 0.1rem;
+  &:hover{
+    text-decoration: none;
+  }
 }
