@@ -10,8 +10,13 @@
     %header.shadow.fixed-top.bg-light
       %h2.logo.ml-5.float-left.my-3
         = link_to 'cloval', root_path, class: 'logo text-body'
-      .btn-wrapper.mr-5.my-3.float-right
-        = link_to "sign in", new_user_session_path, class: 'btn btn-outline-primary'
-        = link_to "sign up", new_user_registration_path, class: 'btn btn-outline-primary ml-2'
-
-    = yield
+      - if user_signed_in?
+        .btn-wrapper.mr-5.my-3.float-right
+          = link_to "my page", new_user_session_path, class: 'btn btn-outline-primary'
+          = link_to "sign out", destroy_user_session_path, method: :delete, class: 'btn btn-outline-primary'
+      - else
+        .btn-wrapper.mr-5.my-3.float-right
+          = link_to "sign in", new_user_session_path, class: 'btn btn-outline-primary'
+          = link_to "sign up", new_user_registration_path, class: 'btn btn-outline-primary ml-2'
+    .space-top
+      = yield
