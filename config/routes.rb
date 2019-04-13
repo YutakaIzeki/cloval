@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
+  root 'coordinates#index'
   devise_for :users
-root 'coordinates#index'
 
 end
