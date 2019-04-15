@@ -1,27 +1,14 @@
-.wrapper
-  %header.shadow.fixed-top.bg-light
-    %h2.logo.ml-5.float-left.my-3 cloval
-    .btn-wrapper.mr-5.my-3.float-right
-      .btn.btn-outline-primary sign in
-      .btn.btn-outline-primary.ml-2 sign up
 
-
-  .main
-    .position-relative.p-3.p-md-5.m-md-3.text-center.bg-light
-      .col-md-5.p-lg-5.mx-auto.my-5
-        %h1.display-4.font-weight-normal Punny headline
-        %p.lead.font-weight-normal And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple’s marketing pages.
-        %a.btn.btn-outline-secondary{:href => "#"} Coming soon
-      .product-device.shadow-sm.d-none.d-md-block
-      .product-device.product-device-2.shadow-sm.d-none.d-md-block
-      .d-md-flex.flex-md-equal.w-100.my-md-3.pl-md-3
-        .bg-dark.mr-md-3.pt-3.px-3.pt-md-5.px-md-5.text-center.text-white.overflow-hidden
-          .my-3.py-3
-            %h2.display-5 Another headline
-            %p.lead And an even wittier subheading.
-          .bg-light.shadow-sm.mx-auto{:style => "width: 80%; height: 300px; border-radius: 21px 21px 0 0;"}
-        
-
-
-  %footer
-
+.main
+  .container
+    .row.pt-4
+      .col-md-4.bg-primary
+        .card.bg-sucsess.h-100
+          = link_to image_tag('sample.jpg', class:"img-responsive")
+      .col-md-4.bg-secondary
+      .col-md-4.bg-light
+    .row.pt-4
+      .col-md-6.bg-primary
+      .col-md-6.bg-secondary
+    .row.pt-4
+      

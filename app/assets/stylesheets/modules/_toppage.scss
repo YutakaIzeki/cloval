@@ -1,4 +1,24 @@
 
 .logo{
   letter-spacing: 0.1rem;
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+.space-top{
+  margin-top: 70px;
+}
+
+// .container{
+//   height: 400px;
+//   width: 300px;
+// }
+
+.col-md-4{
+  height: 30rem;
+}
+
+.col-md-6{
+  height: 45rem;
 }
