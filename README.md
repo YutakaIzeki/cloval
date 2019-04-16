@@ -1,24 +1,29 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## usersテーブル
 
-* Ruby version
+|Column|Type|Option|
+|------|----|------|
+|name|string|null: false, unique:true|
+|icon|text|default: sample.jpg|
+|rank|integer|default: 0|
+|score|integer|default: 0|
 
-* System dependencies
+### Association
+- has_many :coordinates
 
-* Configuration
 
-* Database creation
 
-* Database initialization
+## coordinatesテーブル
 
-* How to run the test suite
+|Column|Type|Option|
+|------|----|------|
+|user_id|references|null: false, foreign_key: true|
+|image|text|null: false|
+|good|integer|default: 0|
+|evaluation_value|integer|default: 0|
+|evaluation_number|integer|default: 0|
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
+### Associaton
+- belongs_to :user
