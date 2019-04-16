@@ -27,3 +27,21 @@
 
 ### Associaton
 - belongs_to :user
+
+## tagsテーブル
+
+|Column|Type|Option|
+|------|----|------|
+|name|string|null: false, unique: true|
+
+### Associaton
+
+
+
+## categoriesテーブル
+|Column|Type|Option|
+|------|----|------|
+|coordinate_id|integer|null: false, foreign_key: true|
+|tag_id|integer|null: false, foreign_key: true|
+
+### Associaton
