@@ -27,6 +27,7 @@
 
 ### Associaton
 - belongs_to :user
+- has_many :tags, through: :categories
 
 ## tagsテーブル
 
@@ -35,6 +36,7 @@
 |name|string|null: false, unique: true|
 
 ### Associaton
+- has_many :coordinates, through: :categories
 
 
 
