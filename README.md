@@ -30,7 +30,7 @@
 |Column|Type|Option|
 |:------:|----|------|
 |name|string|null: false, unique:true|
-|icon|text|default: sample.jpg|
+|avatar|text|-----|
 |rank|integer|default: 0|
 |score|integer|default: 0|
 
@@ -46,15 +46,15 @@
 |:------:|----|------|
 |user_id|references|null: false, foreign_key: true|
 |image|text|null: false|
-|good|integer|default: 0|
+|likes_count|integer|default: 0|
 |evaluation_value|integer|default: 0|
 |evaluation_number|integer|default: 0|
 
 
 ### Associaton
 - belongs_to :user
-- has_many :categories, dependent: :destroy
-- has_many :tags, through: :categories
+- has_many :coordinate_tags, dependent: :destroy
+- has_many :tags, through: :coordinate_tags
 - has_many :likes, dependent: :destroy
 
 ---
@@ -66,8 +66,8 @@
 |name|string|null: false, unique: true, index: true|
 
 ### Associaton
-- has_many :categories, dependent: :destroy
-- has_many :coordinates, through: :categories
+- has_many :coordinate_tags, dependent: :destroy
+- has_many :coordinates, through: :coordinate_tags
 
 
 ---
@@ -89,7 +89,7 @@
 ---
 #### 以降中間テーブル
 
-## categoriesテーブル
+## coordinate_tagsテーブル
 |Column|Type|Option|
 |------|----|------|
 |coordinate_id|references|null: false, foreign_key: true|
