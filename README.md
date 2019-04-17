@@ -84,8 +84,6 @@
 - validates :user_id, presence: true
 - validates :coordinate_id, presence: true
 
-- 複合キーインデックス unique: true
-
 ---
 #### 以降中間テーブル
 
@@ -98,5 +96,3 @@
 ### Associaton
 - belongs_to :coordinate
 - belongs_to :tag
-
-- 複合キーインデックス unique: true
