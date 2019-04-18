@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: cloval_production
-  username: cloval
-  password: <%= ENV['CLOVAL_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
