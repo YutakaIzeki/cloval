@@ -8,15 +8,23 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     %header.shadow.fixed-top.bg-light
-      %h2.logo.ml-5.float-left.my-3
-        = link_to 'cloval', root_path, class: 'logo text-body'
-      - if user_signed_in?
-        .btn-wrapper.mr-5.my-3.float-right
-          = link_to "my page", user_path(current_user.id), class: 'btn btn-outline-primary'
-          = link_to "sign out", destroy_user_session_path, method: :delete, class: 'btn btn-outline-primary ml-2'
-      - else
-        .btn-wrapper.mr-5.my-3.float-right
-          = link_to "sign in", new_user_session_path, class: 'btn btn-outline-primary'
-          = link_to "sign up", new_user_registration_path, class: 'btn btn-outline-primary ml-2'
+      .container
+        .row
+          .col.w-4.d-flex
+            = form_tag('#',method: :get, class: 'form-inline') do
+              %input{type: 'text', placeholder: 'tag', class: 'form-control mr-2'}
+              %input{type: 'submit', class: 'btn btn-outline-primary', value: 'Search'}
+          .col.w-4.text-center
+            %h2.logo.my-3
+              = link_to 'cloval', root_path, class: 'logo text-body'
+          .col.w-4.d-flex.
+            - if user_signed_in?
+              .btn-wrapper.mr-5.my-3
+                = link_to "my page", user_path(current_user.id), class: 'btn btn-outline-primary'
+                = link_to "sign out", destroy_user_session_path, method: :delete, class: 'btn btn-outline-primary ml-2'
+            - else
+              .btn-wrapper.mr-5.my-3
+                = link_to "sign in", new_user_session_path, class: 'btn btn-outline-primary'
+                = link_to "sign up", new_user_registration_path, class: 'btn btn-outline-primary ml-2'
     .space-top
     = yield
