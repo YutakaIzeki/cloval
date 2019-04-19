@@ -17,11 +17,11 @@
           .col.w-4.text-center
             %h2.logo.my-3
               = link_to 'cloval', root_path, class: 'logo text-body'
-          .col.w-4.d-flex.
+          .col.w-4
             - if user_signed_in?
-              .btn-wrapper.mr-5.my-3
-                = link_to "my page", user_path(current_user.id), class: 'btn btn-outline-primary'
-                = link_to "sign out", destroy_user_session_path, method: :delete, class: 'btn btn-outline-primary ml-2'
+              .btn-wrapper.my-3
+                = link_to "sign out", destroy_user_session_path, method: :delete, class: 'btn btn-outline-primary ml-2 float-right'
+                = link_to "my page", user_path(current_user.id), class: 'btn btn-outline-primary float-right'
             - else
               .btn-wrapper.mr-5.my-3
                 = link_to "sign in", new_user_session_path, class: 'btn btn-outline-primary'
