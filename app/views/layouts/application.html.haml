@@ -15,7 +15,7 @@
               %input{type: 'text', placeholder: 'tag', class: 'form-control mr-2'}
               %input{type: 'submit', class: 'btn btn-outline-primary', value: 'Search'}
           .col.w-4.text-center
-            %h2.logo.my-3
+            %h1.logo.my-3
               = link_to 'cloval', root_path, class: 'logo text-body'
           .col.w-4
             - if user_signed_in?
@@ -28,3 +28,7 @@
                 = link_to "sign up", new_user_registration_path, class: 'btn btn-outline-primary ml-2'
     .space-top
     = yield
+
+    %footer.mt-5.bg-light
+      .container.border-top.text-center.py-4
+        %p.my-1 2019   yutaka izeki
