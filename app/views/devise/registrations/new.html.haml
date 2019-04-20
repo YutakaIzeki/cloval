@@ -1,4 +1,4 @@
-.text-center.pt-5  
+.text-center.py-5.form-container
   %h2 Sign up
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     = render "devise/shared/error_messages", resource: resource
@@ -18,5 +18,5 @@
       %br/
       = f.password_field :password_confirmation, autocomplete: "new-password"
     .actions
-      = f.submit "Sign up"
+      = f.submit "Sign up", class: 'btn btn-primary my-3'
   = render "devise/shared/links"
