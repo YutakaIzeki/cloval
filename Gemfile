@@ -67,3 +67,5 @@ gem 'erb2haml'
 gem 'bootstrap'
 gem 'devise'
 gem "pry-rails"
+gem 'carrierwave'
+gem 'mini_magick'
