@@ -5,4 +5,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
 
+  resources :coordinates, only: [:show,:new,:create,:update]
+
 end
