@@ -9,6 +9,7 @@ class CoordinatesController < ApplicationController
   end
   
   def create
+    Coordinate.create(coordinate_params)
     redirect_to user_path(current_user.id)
   end
   
@@ -23,7 +24,7 @@ class CoordinatesController < ApplicationController
 private
 
 def coordinate_params
-  params.require(:coordinate)
+  params.require(:coordinate).permit(:image).merge(user_id: current_user.id)
 end
 
 

@@ -3,6 +3,6 @@
   = image_tag("sample.jpg", class: 'mt-5 mb-4 img-fluid', size: 19*19)
   = form_for @coordinate, html: {class: 'text-center'} do |f|
     .feild.text-center
-      = f.file_field :image, class: ''
+      = f.file_field :image
     .action.mt-3
       = f.submit "Save", class: 'btn btn-outline-primary'
