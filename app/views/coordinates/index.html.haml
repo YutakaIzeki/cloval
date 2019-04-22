@@ -9,43 +9,15 @@
       = link_to 'WOMEN','#',{class: 'text-muted h4'}
 
   .container
-    .card-deck.card-deck1.mt-2
+    .card-deck.card-deck1.mt-4
       .card.h-100
-        = link_to image_tag('sample.jpg', class:"card-img"), '/coordinates/1'
+        = link_to image_tag(@coordinates.last.image&.url, class:"card-img"), coordinate_path(@coordinates.pop&.id) if @coordinates.present?
       .card.h-100
-        = link_to image_tag('sample.jpg', class:"card-img"), '#'
+        = link_to image_tag(@coordinates.last.image&.url, class:"card-img"), coordinate_path(@coordinates.pop&.id) if @coordinates.present?
       .card.h-100
-        = link_to image_tag('sample.jpg', class:"card-img"), '#'
+        = link_to image_tag(@coordinates.last.image&.url, class:"card-img"), coordinate_path(@coordinates.pop&.id) if @coordinates.present?
     .card-deck.card-deck2.mt-4
       .card.h-100
-        = link_to image_tag('sample.jpg', class:"card-img"), '#'
+        = link_to image_tag(@coordinates.last.image&.url, class:"card-img"), coordinate_path(@coordinates.pop&.id) if @coordinates.present?
       .card.h-100
-        = link_to image_tag('sample.jpg', class:"card-img"), '#'
-    .card-deck.card-deck1.mt-2
-      .card.h-100
-        = link_to image_tag('sample.jpg', class:"card-img"), '#'
-      .card.h-100
-        = link_to image_tag('sample.jpg', class:"card-img"), '#'
-      .card.h-100
-        = link_to image_tag('sample.jpg', class:"card-img"), '#'
-    .card-deck.card-deck2.mt-4
-      .card.h-100
-        = link_to image_tag('sample.jpg', class:"card-img"), '#'
-      .card.h-100
-        = link_to image_tag('sample.jpg', class:"card-img"), '#'
-
-
-
-
-  -# .container
-  -#   .row.mt-2
-  -#     .col-md-4.bg-primary
-  -#       .card.bg-sucsess.h-100
-  -#         = link_to image_tag('sample.jpg', class:"card"), '#'
-  -#         .card-img-overlay
-  -#     .col-md-4.bg-secondary
-  -#     .col-md-4.bg-light
-  -#   .row.pt-4
-  -#     .col-md-6.bg-primary
-  -#     .col-md-6.bg-secondary
-      
+        = link_to image_tag(@coordinates.last.image&.url, class:"card-img"), coordinate_path(@coordinates.pop&.id) if @coordinates.present?
