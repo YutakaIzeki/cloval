@@ -9,6 +9,7 @@
     -#   = f.file_field :avator
 
     .field.mt-2
+      %p.mb-2 user info
       -# = f.label :nickname
       -# %br/
       = f.text_field :nickname, autofocus: true, class: 'form-control', placeholder: 'nickname'
@@ -17,7 +18,8 @@
       -# %br/
       = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'aaa@gmail.com'
     .field.mt-2
-      = f.label :password
+      %p.mb-2 Password
+      -# = f.label :password
       -# - if @minimum_password_length
       -#   %em
       -#     (#{@minimum_password_length} characters minimum)
