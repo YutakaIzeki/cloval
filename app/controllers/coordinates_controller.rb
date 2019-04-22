@@ -1,7 +1,10 @@
 class CoordinatesController < ApplicationController
 
   def index
-    
+    @coordinates = []
+    Coordinate.all.each do |coordinate|
+      @coordinates << coordinate
+    end
   end
 
   def new
@@ -14,7 +17,7 @@ class CoordinatesController < ApplicationController
   end
   
   def show
-    @coordinate = Coordinate.new
+    @coordinate = Coordinate.find(params[:id])
   end
 
   def update
