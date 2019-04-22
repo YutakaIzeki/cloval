@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190422121842) do
+ActiveRecord::Schema.define(version: 20190422122213) do
 
   create_table "coordinates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",                                     null: false
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20190422121842) do
     t.datetime "updated_at",                                        null: false
     t.string   "nickname",                                          null: false
     t.text     "avatar",                 limit: 65535
+    t.string   "sex",                                               null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
