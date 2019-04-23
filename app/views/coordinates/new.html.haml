@@ -4,5 +4,6 @@
   = form_for @coordinate, html: {class: 'text-center'} do |f|
     .feild.text-center
       = f.file_field :image
+      = f.hidden_field :sex, value: current_user.sex
     .action.mt-3
       = f.submit "Save", class: 'btn btn-outline-primary'

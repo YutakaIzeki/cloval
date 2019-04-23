@@ -27,7 +27,7 @@ class CoordinatesController < ApplicationController
 private
 
 def coordinate_params
-  params.require(:coordinate).permit(:image).merge(user_id: current_user.id)
+  params.require(:coordinate).permit(:image, :sex).merge(user_id: current_user.id)
 end
 
 
