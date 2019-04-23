@@ -2,11 +2,11 @@
 .main
   .nav.d-flex.justify-content-center.text-center.py-2.border-bottom
     .categorie.w-25
-      = link_to 'ALL','#',{class: 'text-muted h4'}
+      = link_to 'ALL', root_path,{class: 'text-muted h4'}
     .categorie.w-25
-      = link_to 'MEN','#',{class: 'text-muted h4'}
+      = link_to 'MEN','/coordinates/index/male',{class: 'text-muted h4'}
     .categorie.w-25
-      = link_to 'WOMEN','#',{class: 'text-muted h4'}
+      = link_to 'WOMEN','/coordinates/index/female',{class: 'text-muted h4'}
 
   .container
     = render partial: "coordinates-list", locals: { coordinates: @coordinates }

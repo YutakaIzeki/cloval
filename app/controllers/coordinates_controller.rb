@@ -2,7 +2,10 @@ class CoordinatesController < ApplicationController
 
   def index
     @coordinates = []
-    Coordinate.all.each do |coordinate|
+
+    params[:kind].present? ? coordinates = Coordinate.where(sex: params[:kind]) : coordinates = Coordinate.all
+
+    coordinates.each do |coordinate|
       @coordinates << coordinate
     end
   end
