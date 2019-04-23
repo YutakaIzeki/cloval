@@ -1,0 +1,15 @@
+
+- while coordinates.present?  do
+  .card-deck.card-deck1.mt-4
+    .card.h-100.border-0.shadow
+      = link_to image_tag(coordinates.last.image&.url, class:"card-img"), coordinate_path(coordinates.pop&.id) if coordinates.present?
+    .card.h-100.border-0.shadow
+      = link_to image_tag(coordinates.last.image&.url, class:"card-img"), coordinate_path(coordinates.pop&.id) if coordinates.present?
+    .card.h-100.border-0
+      = link_to image_tag(coordinates.last.image&.url, class:"card-img"), coordinate_path(coordinates.pop&.id) if coordinates.present?
+      - break unless coordinates.present?
+  .card-deck.card-deck2.mt-4
+    .card.h-100.border-0.shadow
+      = link_to image_tag(coordinates.last.image&.url, class:"card-img"), coordinate_path(coordinates.pop&.id) if coordinates.present?
+    .card.h-100.border-0
+      = link_to image_tag(coordinates.last.image&.url, class:"card-img"), coordinate_path(coordinates.pop&.id) if coordinates.present? 

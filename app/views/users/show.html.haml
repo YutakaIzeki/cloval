@@ -1,21 +1,11 @@
+
 .container
   .profile-container.py-5.d-flex.border-bottom
     .img-container
       = image_tag("icon.jpg", size: 12*12, class: "img-fluid rounded-circle")
-    .info-container.h-100.align-center.ml-5.mt-4
-      %h5 yutaka
+    .info-container.h-100.align-center.ml-4.mt-4
+      %h5 
+        = current_user.nickname
 
   = link_to "投稿する", new_coordinate_path, class: 'btn btn-outline-primary my-3 mx-5 d-block'
-  
-  .card-deck.card-deck1.mt-4
-    .card.h-100
-      = link_to image_tag('sample.jpg', class:"card-img"), '#'
-    .card.h-100
-      = link_to image_tag('sample.jpg', class:"card-img"), '#'
-    .card.h-100
-      = link_to image_tag('sample.jpg', class:"card-img"), '#'
-  .card-deck.card-deck2.mt-4
-    .card.h-100
-      = link_to image_tag('sample.jpg', class:"card-img"), '#'
-    .card.h-100
-      = link_to image_tag('sample.jpg', class:"card-img"), '#'
+  = render partial: "coordinates/coordinates-list", locals: { coordinates: @coordinates }

@@ -1,7 +1,13 @@
 class CoordinatesController < ApplicationController
 
   def index
-    
+    @coordinates = []
+
+    params[:kind].present? ? coordinates = Coordinate.where(sex: params[:kind]) : coordinates = Coordinate.all
+
+    coordinates.each do |coordinate|
+      @coordinates << coordinate
+    end
   end
 
   def new
@@ -9,11 +15,12 @@ class CoordinatesController < ApplicationController
   end
   
   def create
+    Coordinate.create(coordinate_params)
     redirect_to user_path(current_user.id)
   end
   
   def show
-    @coordinate = Coordinate.new
+    @coordinate = Coordinate.find(params[:id])
   end
 
   def update
@@ -23,7 +30,7 @@ class CoordinatesController < ApplicationController
 private
 
 def coordinate_params
-  params.require(:coordinate)
+  params.require(:coordinate).permit(:image, :sex).merge(user_id: current_user.id)
 end
 
 
