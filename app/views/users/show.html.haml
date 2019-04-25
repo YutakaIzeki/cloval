@@ -9,6 +9,8 @@
       %h5
         your score: 
         = current_user.score
-
+      %h5
+        your rank:
+        = current_user.rank
   = link_to "投稿する", new_coordinate_path, class: 'btn btn-outline-primary my-3 mx-5 d-block'
   = render partial: "coordinates/coordinates-list", locals: { coordinates: @coordinates, coordinate_average_arry:  @coordinate_average_arry }
