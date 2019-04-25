@@ -33,11 +33,7 @@ class CoordinatesController < ApplicationController
   end
 
   def update
-    @coordinate.evaluation_value += params[:add_point].to_i
-    @coordinate.evaluation_number += 1
-    @coordinate.user.score += params[:add_point].to_i
-    @coordinate.user.save
-    @coordinate.save
+    @coordinate.update_coordinate_and_user_evaluation(params[:add_point])
     redirect_to root_path
   end
 
