@@ -1,5 +1,7 @@
 class CoordinatesController < ApplicationController
 
+  before_action :set_coordinate, only: [:show, :update]
+
   def index
     @coordinates = []
     @coordinate_average_arry = []
@@ -28,14 +30,14 @@ class CoordinatesController < ApplicationController
   end
   
   def show
-    @coordinate = Coordinate.find(params[:id])
   end
 
   def update
-    coordinate = Coordinate.find(params[:id])
-    coordinate.evaluation_value += params[:add_point].to_i
-    coordinate.evaluation_number += 1
-    coordinate.save
+    @coordinate.evaluation_value += params[:add_point].to_i
+    @coordinate.evaluation_number += 1
+    @coordinate.user.score += params[:add_point].to_i
+    @coordinate.user.save
+    @coordinate.save
     redirect_to root_path
   end
 
@@ -45,6 +47,9 @@ def coordinate_params
   params.require(:coordinate).permit(:image, :sex).merge(user_id: current_user.id)
 end
 
+def set_coordinate
+  @coordinate = Coordinate.find(params[:id])
+end
 
 
 
