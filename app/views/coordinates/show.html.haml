@@ -3,7 +3,6 @@
   = image_tag(@coordinate.image, class: 'mt-5 mb-4 img-fluid', size: 19*19)
   = form_for @coordinate, html: {class: 'text-center'} do |f|
     .feild.text-center
-      -# = f.number_field :add_point, class: ''
-      %input{type: 'range', name: 'add_point'}
+      %input{type: 'range',value: '5', min: '1',max: '10', name: 'add_point'}
     .action.mt-3
       = f.submit "Send", class: 'btn btn-outline-primary'

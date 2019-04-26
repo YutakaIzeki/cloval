@@ -22,6 +22,25 @@
   height: 45rem;
 }
 
+.fa-heart{
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: red;
+}
+
+.average{
+  font-size: 1.8rem;
+}
+
+// トップページとマイページ
+
+.info-box{
+  bottom: 2vh;
+  right: 1vw;
+  opacity: 0.6;
+  width: 32%;
+}
+
 //sign in ページ
 .form-container{
   height: 72vh;
