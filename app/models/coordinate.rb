@@ -1,9 +1,15 @@
 class Coordinate < ApplicationRecord
 
+  # バリデーション
   validates :image, presence: true
 
+  # アソシエーション
   belongs_to :user
+  has_many :likes, dependent: :destroy
+
+  # アップローダのマウント
   mount_uploader :image, CoordinateUploader
+
 
   def update_coordinate_and_user_evaluation(add_point)
     self.evaluation_value += add_point.to_i
