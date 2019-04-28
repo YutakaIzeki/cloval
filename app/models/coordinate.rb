@@ -10,7 +10,7 @@ class Coordinate < ApplicationRecord
   # アップローダのマウント
   mount_uploader :image, CoordinateUploader
 
-
+  # コーディネートの評価とユーザのランクのアップデート
   def update_coordinate_and_user_evaluation(add_point)
     self.evaluation_value += add_point.to_i
     self.evaluation_number += 1
@@ -28,6 +28,14 @@ class Coordinate < ApplicationRecord
 
     self.user.save
     self.save    
+  end
+
+  def like(use)
+    likes.create(user_id: user.id)
+  end
+
+  def unlike(user)
+    likes.find_by(user_id: user.id).destroy
   end
 
 end
