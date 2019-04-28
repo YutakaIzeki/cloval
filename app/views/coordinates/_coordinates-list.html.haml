@@ -1,7 +1,7 @@
 
 - while coordinates.present?  do
   .card-deck.card-deck1.mt-4
-    .card.h-100.border-0.shadow.position-relative
+    .card.h-100.border-0.shadow
       - if coordinates.present?
         = link_to image_tag(coordinates.last.image&.url, class:"card-img"), coordinate_path(coordinates.pop&.id)
         .info-box.d-flex.position-absolute.bg-light.rounded
