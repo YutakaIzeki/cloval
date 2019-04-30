@@ -44,8 +44,13 @@
   width: 32%;
 }
 
+button:focus{
+  outline: 0;
+}
+
 //sign in ページ
 .form-container{
   height: 72vh;
   max-width: 330px;
 }
+
