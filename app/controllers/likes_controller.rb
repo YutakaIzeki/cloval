@@ -1,9 +1,7 @@
 class LikesController < ApplicationController
 
-  before_action :logged_in_user
 
   def create
-    binding.pry
     @coordinate = Coordinate.find(params[:coordinate_id])
     unless @coordinate.like?(current_user)
       @coordinate.like(current_user)
@@ -23,4 +21,5 @@ class LikesController < ApplicationController
         format.js
       end
     end
+  end
 end
