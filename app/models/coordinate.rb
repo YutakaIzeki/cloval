@@ -7,6 +7,8 @@ class Coordinate < ApplicationRecord
   belongs_to :user
   has_many :likes, dependent: :destroy
 
+  has_many :like_users, through: :likes, source: :user
+
   # アップローダのマウント
   mount_uploader :image, CoordinateUploader
 
@@ -30,12 +32,17 @@ class Coordinate < ApplicationRecord
     self.save    
   end
 
-  def like(use)
-    likes.create(user_id: user.id)
+  def like(user)
+    self.likes.create(user_id: user.id)
   end
 
   def unlike(user)
-    likes.find_by(user_id: user.id).destroy
+    self.likes.find_by(user_id: user.id).destroy
+  end
+
+  # 現在のユーザがいいねしていたらtrueを返す
+  def like?(user)
+    self.like_users.include?(user)
   end
 
 end
