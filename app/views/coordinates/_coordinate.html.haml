@@ -1,7 +1,7 @@
 - if coordinate.present?
   = link_to image_tag(coordinate.image&.url, class:"card-img"), coordinate_path(coordinate.id)
   .info-box.d-flex.position-absolute.bg-light.rounded
-    .like-box.my-auto.float-left.w-50.text-center
+    .like-box.my-auto.float-left.w-50.text-center{id: "like-#{coordinate.id}"}
       = render partial: "coordinates/like", locals: { coordinate: coordinate}
       %i.fa.fa-heart.fa-fw.faa-pulse.animated
     .border.border-dark
