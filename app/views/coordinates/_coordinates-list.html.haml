@@ -2,16 +2,16 @@
 - while coordinates.present?  do
   .card-deck.card-deck1.mt-4
     .card.h-100.border-0.shadow
-      = render partial: "coordinate", locals: { coordinate: coordinates.pop, coordinate_average:  coordinate_average_arry.pop }
+      = render partial: "coordinates/coordinate", locals: { coordinate: coordinates.pop, coordinate_average:  coordinate_average_arry.pop }
     .card.h-100.border-0.shadow
-      = render partial: "coordinate", locals: { coordinate: coordinates.pop, coordinate_average:  coordinate_average_arry.pop }
+      = render partial: "coordinates/coordinate", locals: { coordinate: coordinates.pop, coordinate_average:  coordinate_average_arry.pop }
     .card.h-100.border-0
-      = render partial: "coordinate", locals: { coordinate: coordinates.pop, coordinate_average:  coordinate_average_arry.pop }
+      = render partial: "coordinates/coordinate", locals: { coordinate: coordinates.pop, coordinate_average:  coordinate_average_arry.pop }
 
       - break unless coordinates.present?
 
   .card-deck.card-deck2.mt-4
     .card.h-100.border-0.shadow
-      = render partial: "coordinate", locals: { coordinate: coordinates.pop, coordinate_average:  coordinate_average_arry.pop }
+      = render partial: "coordinates/coordinate", locals: { coordinate: coordinates.pop, coordinate_average:  coordinate_average_arry.pop }
     .card.h-100.border-0
-      = render partial: "coordinate", locals: { coordinate: coordinates.pop, coordinate_average:  coordinate_average_arry.pop }
+      = render partial: "coordinates/coordinate", locals: { coordinate: coordinates.pop, coordinate_average:  coordinate_average_arry.pop }
