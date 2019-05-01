@@ -38,4 +38,4 @@
     .tab-pane.active{id: "tab1"}
       = render partial: "coordinates/coordinates-list", locals: { coordinates: @coordinates, coordinate_average_arry:  @coordinate_average_arry }
     .tab-pane{id: "tab2"}
-      %p hello!
+      = render partial: "coordinates/coordinates-list", locals: { coordinates: @current_user_liked_coordinates, coordinate_average_arry:  @current_user_liked_coordinate_average_arry }
