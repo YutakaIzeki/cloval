@@ -10,3 +10,5 @@
 
   .container
     = render partial: "coordinates-list", locals: { coordinates: @coordinates, coordinate_average_arry:  @coordinate_average_arry }
+  .pagenation_container.w-25.py-4.float-right
+    = paginate(@o_coordinates)
