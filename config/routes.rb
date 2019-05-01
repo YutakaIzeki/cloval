@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   get 'coordinates/index/:kind' => 'coordinates#index'
 
   resources :users, only: [:show]
-  resources :coordinates, only: [:show,:new,:create,:update]
+
+  resources :coordinates, only: [:show,:new,:create,:update,:destroy]
 
   resources :likes, only: [:create, :destroy]
 
