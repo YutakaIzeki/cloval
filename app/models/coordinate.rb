@@ -32,10 +32,12 @@ class Coordinate < ApplicationRecord
     self.save    
   end
 
+  # いいねする
   def like(user)
     self.likes.create(user_id: user.id)
   end
 
+  # いいねを解除する
   def unlike(user)
     self.likes.find_by(user_id: user.id).destroy
   end
@@ -43,6 +45,15 @@ class Coordinate < ApplicationRecord
   # 現在のユーザがいいねしていたらtrueを返す
   def like?(user)
     self.like_users.include?(user)
+  end
+
+  # コーディネートごとの評価の平均値を算出
+  def average_calc(arry)
+    if self.evaluation_number == 0 
+      arry << 0
+    else
+      arry << (self.evaluation_value.to_f / self.evaluation_number.to_f).round(1)
+    end
   end
 
 end
