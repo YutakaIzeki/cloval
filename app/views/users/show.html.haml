@@ -26,4 +26,16 @@
         %i.far.fa-grin-wink
         %i.far.fa-grin-stars.fa-2x.fa-fw.faa-tada.animated
   = link_to "投稿する", new_coordinate_path, class: 'btn btn-outline-primary my-3 mx-5 d-block'
-  = render partial: "coordinates/coordinates-list", locals: { coordinates: @coordinates, coordinate_average_arry:  @coordinate_average_arry }
+
+  %ul.nav.nav-tabs.pt-3
+    %li.nav-item
+      %a.nav-link.active{href: "#tab1", data: {toggle: "tab"}}
+        Your's
+    %li.nav-item
+      %a.nav-link{href: "#tab2", data: {toggle: "tab"}}
+        Favorites
+  .tab-content
+    .tab-pane.active{id: "tab1"}
+      = render partial: "coordinates/coordinates-list", locals: { coordinates: @coordinates, coordinate_average_arry:  @coordinate_average_arry }
+    .tab-pane{id: "tab2"}
+      = render partial: "coordinates/coordinates-list", locals: { coordinates: @current_user_liked_coordinates, coordinate_average_arry:  @current_user_liked_coordinate_average_arry }

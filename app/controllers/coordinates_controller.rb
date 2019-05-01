@@ -25,8 +25,12 @@ class CoordinatesController < ApplicationController
   end
   
   def create
-    Coordinate.create(coordinate_params)
-    redirect_to user_path(current_user.id)
+    coordinate = Coordinate.new(coordinate_params)
+    if coordinate.save
+      redirect_to user_path(current_user.id)
+    else
+      redirect_to new_coordinate_path
+    end  
   end
   
   def show
