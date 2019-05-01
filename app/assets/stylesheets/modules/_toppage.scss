@@ -48,6 +48,10 @@ button:focus{
   outline: 0;
 }
 
+button{
+  background-color: transparent;
+}
+
 //sign in ページ
 .form-container{
   height: 72vh;
