@@ -12,11 +12,7 @@ class CoordinatesController < ApplicationController
       @coordinates << coordinate
 
       # コーディネートの評価の平均値を計算し、配列に格納
-      if coordinate.evaluation_number == 0 
-        @coordinate_average_arry << 0
-      else
-        @coordinate_average_arry << (coordinate.evaluation_value.to_f / coordinate.evaluation_number.to_f).round(1)
-      end
+      coordinate.average_calc(@coordinate_average_arry)
     end
   end
 
@@ -41,16 +37,19 @@ class CoordinatesController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy
+    coordinate = Coordinate.find(params[:id])
+        coordinate.destroy if    coordinate.user_id == current_user.id
+  end
+
 private
 
-def coordinate_params
-  params.require(:coordinate).permit(:image, :sex).merge(user_id: current_user.id)
-end
+  def coordinate_params
+    params.require(:coordinate).permit(:image, :sex).merge(user_id: current_user.id)
+  end
 
-def set_coordinate
-  @coordinate = Coordinate.find(params[:id])
-end
-
-
+  def set_coordinate
+    @coordinate = Coordinate.find(params[:id])
+  end
 
 end
