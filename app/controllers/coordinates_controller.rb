@@ -6,9 +6,9 @@ class CoordinatesController < ApplicationController
     @coordinates = []
     @coordinate_average_arry = []
 
-    params[:kind].present? ? coordinates = Coordinate.where(sex: params[:kind]) : coordinates = Coordinate.all
+    params[:kind].present? ? @o_coordinates = Coordinate.where(sex: params[:kind]).page(params[:page]).per(15) : @o_coordinates = Coordinate.all.page(params[:page]).per(15)
 
-    coordinates.each do |coordinate|
+    @o_coordinates.each do |coordinate|
       @coordinates << coordinate
 
       # コーディネートの評価の平均値を計算し、配列に格納
