@@ -96,3 +96,14 @@
 ### Associaton
 - belongs_to :coordinate
 - belongs_to :tag
+
+
+
+#### ログインパスワード
+- men
+  - メールアドレス: 1111@1111
+  - パスワード: 111111
+
+- women
+  - 2222@2222
+  - パスワード: 222222
