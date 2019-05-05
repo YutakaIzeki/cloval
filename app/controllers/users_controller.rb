@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def show
 
-    # ユーザーの投稿一覧
+    # カレントユーザーの投稿一覧
     @coordinates = []
     @coordinate_average_arry = []
     
