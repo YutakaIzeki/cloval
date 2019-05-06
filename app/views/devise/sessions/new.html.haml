@@ -1,5 +1,9 @@
 .text-center.py-5.form-container.mx-auto
   %h2 Sign in
+  .pass_box.bg-dark.text-warning
+    %h3 テストユーザ
+    %h4 メールアドレス: 2222@2222
+    %h4 パスワード: 222222
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .field
       = f.label :email
